@@ -3,6 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="app.js"></script>
 		<title>Meta Programming</title>
 	</head>
 	<body>
@@ -22,6 +23,19 @@
 			The Symbol method can also take an argument to act as a debugging
 			reference/identifier however this identifier has no meaning/relevance in
 			the actual code of the application.
+		</p>
+		<h3>Iterators</h3>
+		<p>
+			An iterator is an object that has a 'next' method which then in turn
+			returns a result of a certain structure. We can turn any object into an
+			iterator by definining a next method named exactly 'next'. This 'next'
+			method should return an object containing a 'value' property and a 'done'
+			property which signals via a boolean whether there are more values to
+			iterate over or not. This allows us to create a loopable object where we
+			can loop/iterate over properties of an object. Creating custom looping
+			logic like this can be useful for example when you only want to loop over
+			values of one specific object property rather than using a for in or for
+			of loop that loops over all object properties.
 		</p>
 	</body>
 </html>
