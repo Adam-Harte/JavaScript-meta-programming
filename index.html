@@ -8,6 +8,14 @@
 	</head>
 	<body>
 		<h1>Meta Programming</h1>
+		<p>
+			Meta programming is the creation and configuration of code that is later
+			accessed by a user or another developer with certain functionalities and
+			limitations added. For example if you were to create your own library you
+			would build your variables, objects and methods with users in mind and
+			therefore maybe want to limit or control what the user has access to and
+			what they can change; this is where meta programming comes into play.
+		</p>
 		<h3>Symbols</h3>
 		<p>
 			Symbols are a primitve value that you can use as unique object property
@@ -79,6 +87,26 @@
 			need to work with objects is all bundled together in the Reflect API
 			offering more available functionality then the global 'Object' e.g.
 			deleteProperty method is not available on global 'Object'.
+		</p>
+		<h3>Proxy API</h3>
+		<p>
+			The Proxy API is used to create 'traps' for object operations. With the
+			Proxy API we can step in on certain object operations and execute code. We
+			us the Proxy API to wrap objects with specific Proxy configurations on
+			operations. When we wrap an object with a Proxy we are essentially
+			wrapping an object with another object as the Proxy API layer itself is an
+			object. We create a proxy by defining a new instance with the new Proxy
+			constructor function. This function takes two arguments, the object you
+			want to wrap with the Proxy and an object to configure operations you want
+			to set Proxy 'traps' for. The Proxy API has a bunch of pre defined 'traps'
+			we can use in our configuration object. An example of a Proxy 'trap' is
+			the get 'trap' which allows us to step in and override/execute code on the
+			operation of getting an object property. One other common Proxy 'trap'
+			example is a set 'trap' where we can step in and override/execute code on
+			the operation of setting an object property value. These traps differ to
+			getters and setters in objects as getters and setters work on one specific
+			property at a time whereas the Proxy get and set 'traps' work across the
+			whole object and all properties.
 		</p>
 	</body>
 </html>

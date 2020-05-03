@@ -82,3 +82,22 @@ console.log(course);
 Reflect.deleteProperty(course, 'title');
 
 console.log(course);
+
+// Proxy API
+const courseProxyHandler = {
+	get(obj, property) {
+		console.log(property);
+		return obj[property] || 'NOT FOUND!';
+	},
+	set(obj, property, value) {
+		console.log(property, value);
+		if (property === 'rating') {
+			return;
+		}
+		obj[property] = value.toString();
+	},
+};
+
+const proxyCourse = new Proxy(course, courseProxyHandler);
+
+console.log(proxyCourse.title, proxyCourse.length, proxyCourse.rating);
