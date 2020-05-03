@@ -37,5 +37,34 @@
 			values of one specific object property rather than using a for in or for
 			of loop that loops over all object properties.
 		</p>
+		<h3>Iterators with for of loops</h3>
+		<p>
+			Whilst the next method turns objects into iterators they are stil not
+			iterable via for loops. To make objects iterable over loops the object
+			needs to have the 'iterator' symbol. By combining the 'iterator' symbol
+			and an iterator object with the 'next' method inside we allow an object to
+			be looped over with traditional for of loops.
+		</p>
+		<h3>Generators</h3>
+		<p>
+			Rather than having to manually create this new 'iterator' object with the
+			'next' and 'done' we can use generators. A generator builds us an iterator
+			object with the 'done' value and 'next' method. A generator is a special
+			type of JavaScript function which generates iterator objects for you.
+			Generator functions also have a 'yield' keyword which allows us to define
+			the return value of the 'next' method it has when it builds the iterator
+			object. The 'yield' keyword acts as a pause in execution of the generatorn
+			function where behind the scenes it is just caling the next function on
+			the iterator object it generated to iterate over the next property/value.
+			Because generator functions create an iterable object to use them
+			effectively we must call them as a variable declaration e.g. const
+			myGenerator = generator() othwerise calling the function with 'next'
+			everytime will return us the same value as it is creating another new
+			iterable object every time. We can combine the iterator symbol with a
+			generator function to make a for loop iterable object where the handling
+			of when 'done' is true is handled by the for of loop. You create a
+			generator function by defining a function with the '*' appended e.g.
+			function* myGenerator.
+		</p>
 	</body>
 </html>

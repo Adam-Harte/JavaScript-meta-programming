@@ -29,6 +29,14 @@ const company = {
 		this.curEmployee++;
 		return returnValue;
 	},
+	// generators
+	[Symbol.iterator]: function* employeeGenerator() {
+		let currentEmployee = 0;
+		while (currentEmployee < this.employees.length) {
+			yield this.employees[currentEmployee];
+			currentEmployee++;
+		}
+	},
 };
 
 console.log(company.next());
@@ -42,3 +50,11 @@ while (!employee.done) {
 	console.log(employee.value);
 	employee = company.next();
 }
+
+// generators
+
+for (const employee of company) {
+	console.log(employee);
+}
+
+console.log([...company]);
