@@ -58,3 +58,27 @@ for (const employee of company) {
 }
 
 console.log([...company]);
+
+// Reflect API
+const course = {
+	title: 'JavaScript - The Complete Guide',
+};
+
+Reflect.setPrototypeOf(course, {
+	toString() {
+		return this.title;
+	},
+});
+
+console.log(course.toString());
+
+Reflect.defineProperty(course, 'price', {
+	value: 9.99,
+	writable: true,
+});
+
+console.log(course);
+
+Reflect.deleteProperty(course, 'title');
+
+console.log(course);
